@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.mode.ModeFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="84dp"
+            android:fontFamily="@font/arial_bold"
+            android:text="@string/mode"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="366dp"
+            android:layout_height="197dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardOne"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:layout_weight="1"
+                android:focusable="true"
+                android:clickable="true"
+                app:cardBackgroundColor="@color/cardItem"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/sunrise"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/sunrise"
+                        android:contentDescription="@string/sunsetImage" />
+
+                    <TextView
+                        android:id="@+id/sunrisetext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/sunrise"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/sunset"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardTwo"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:layout_weight="1"
+                android:focusable="true"
+                android:clickable="true"
+                app:cardCornerRadius="15dp"
+                app:cardBackgroundColor="@color/cardItem"
+                app:cardElevation="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/sunset"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/sunset" />
+
+                    <TextView
+                        android:id="@+id/sunsettext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/sunset"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="20dp"
+                        android:text="Закат"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="366dp"
+            android:layout_height="197dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.511"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardThree"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:layout_weight="1"
+                android:focusable="true"
+                android:clickable="true"
+                app:cardCornerRadius="15dp"
+                app:cardBackgroundColor="@color/cardItem"
+                app:cardElevation="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/nighticon"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/night" />
+
+                    <TextView
+                        android:id="@+id/nighttext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/nighticon"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="20dp"
+                        android:text="Ночник"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardFour"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:layout_weight="1"
+                android:focusable="true"
+                android:clickable="true"
+                app:cardCornerRadius="15dp"
+                app:cardBackgroundColor="@color/cardItem"
+                app:cardElevation="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/filmicon"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/clapperboard" />
+
+                    <TextView
+                        android:id="@+id/filmtext"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/filmicon"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="20dp"
+                        android:text="Кино"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="366dp"
+            android:layout_height="197dp"
+            android:layout_marginTop="1dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.488"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardFive"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:layout_weight="1"
+                android:focusable="true"
+                android:clickable="true"
+                app:cardCornerRadius="15dp"
+                app:cardBackgroundColor="@color/cardItem"
+                app:cardElevation="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/fireIcon"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/fireplace" />
+
+                    <TextView
+                        android:id="@+id/fireText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/fireIcon"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="20dp"
+                        android:text="Камин"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardSix"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:layout_weight="1"
+                android:focusable="true"
+                android:clickable="true"
+                app:cardCornerRadius="15dp"
+                app:cardBackgroundColor="@color/cardItem"
+                app:cardElevation="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/loveIcon"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/heart" />
+
+                    <TextView
+                        android:id="@+id/loveText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/loveIcon"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="20dp"
+                        android:text="Horny"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="366dp"
+            android:layout_height="197dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardSeven"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:layout_weight="1"
+                android:focusable="true"
+                android:clickable="true"
+                app:cardCornerRadius="15dp"
+                app:cardBackgroundColor="@color/cardItem"
+                app:cardElevation="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/snowIcon"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/snow" />
+
+                    <TextView
+                        android:id="@+id/snowText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/snowIcon"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="20dp"
+                        android:text="Снег"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardEight"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:layout_weight="1"
+                android:focusable="true"
+                android:clickable="true"
+                app:cardCornerRadius="15dp"
+                app:cardBackgroundColor="@color/cardItem"
+                app:cardElevation="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/thunderIcon"
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/thunder" />
+
+                    <TextView
+                        android:id="@+id/thunderText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/thunderIcon"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="20dp"
+                        android:text="Гроза"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

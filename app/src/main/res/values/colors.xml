@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="grey">#FF818181</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="red">#FFFF1B56</color>
+    <color name="green">#FF06FFB6</color>
+    <color name="blue">#FF0693FF</color>
+    <color name="statusBar">#FF1E232C</color>
+    <color name="backgroundMenu">#951E232C</color>
+    <color name="cardItem">#601E232C</color>
+    <color name="cardItemSelected">#60355CA3</color>
+</resources>

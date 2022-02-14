@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:title="@string/menuHome"
+            android:icon="@drawable/mode_icon" />
+        <item
+            android:id="@+id/nav_modes"
+            android:title="@string/menuModes"
+            android:icon="@drawable/mode_icon" />
+        <item
+            android:id="@+id/nav_temperature"
+            android:title="@string/menuTemperature"
+            android:icon="@drawable/mode_icon" />
+        <item
+            android:id="@+id/nav_color"
+            android:title="@string/menuColor"
+            android:icon="@drawable/mode_icon" />
+        <item
+            android:id="@+id/nav_thread"
+            android:title="@string/menuThread"
+            android:icon="@drawable/mode_icon" />
+        <item
+            android:id="@+id/nav_timer"
+            android:title="@string/menuTimer"
+            android:icon="@drawable/mode_icon" />
+        <item
+            android:id="@+id/nav_shedules"
+            android:title="@string/menuShedules"
+            android:icon="@drawable/mode_icon" />
+        <item
+            android:id="@+id/nav_scenarious"
+            android:title="@string/menuScenarious"
+            android:icon="@drawable/mode_icon" />
+        <item
+            android:id="@+id/nav_favourites"
+            android:title="@string/menuFavourites"
+            android:icon="@drawable/mode_icon" />
+    </group>
+</menu>

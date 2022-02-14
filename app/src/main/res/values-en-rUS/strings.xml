@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nav_drawer_open">Open</string>
+    <string name="nav_drawer_close">Close</string>
+    <string name="turnOff">Turn Off</string>
+    <string name="toFavourites">To Favourites</string>
+    <string name="timer">Timer</string>
+    <string name="startTimer">Start</string>
+    <string name="stopTimer">Stop</string>
+    <string name="favourites">Favourites</string>
+    <string name="clearFavourites">Clear list</string>
+    <string name="favouritesInfo">Now you don\'t have Favourites presets</string>
+    <string name="favouritesHint">Save current state</string>
+    <string name="favouritesInputHint">Name</string>
+    <string name="save">Save</string>
+    <string name="mode">Mode</string>
+    <string name="sunsetImage">Sunrise</string>
+    <string name="sunset">Sunrise</string>
+    <string name="temperature">Temperature</string>
+    <string name="kelvinsScale">Kelvin\'s scale</string>
+    <string name="pointer">Pointer</string>
+    <string name="brightness">Brightness</string>
+    <string name="timerText"><font color="#FFC859">%1$d</font> min. left</string>
+    <string name="timerInfo">The backlight will automatically turn on/off when the timer ends</string>
+    <string name="menuHome">Home</string>
+    <string name="menuModes">Modes</string>
+    <string name="menuTemperature">Temperature</string>
+    <string name="menuColor">Color</string>
+    <string name="menuThread">Thread</string>
+    <string name="menuTimer">Timer</string>
+    <string name="menuShedules">Shedules</string>
+    <string name="menuScenarious">Scenarious</string>
+    <string name="menuFavourites">Favourites</string>
+    <string name="color">Color</string>
+    <string name="preview">preview</string>
+</resources>

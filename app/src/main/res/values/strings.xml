@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name" translatable="false">WraithLED</string>
+    <string name="menuHeader" translatable="false">Wraith LED</string>
+
+    <string name="nav_drawer_open">Открыть</string>
+    <string name="nav_drawer_close">Закрыть</string>
+    <string name="turnOff">Выключить</string>
+    <string name="toFavourites">В избранное</string>
+
+    <string name="timer">Таймер</string>
+    <string name="timerInfo">Подсветка будет автоматически включена/отключена когда таймер завершится</string>
+    <string name="startTimer">Старт</string>
+    <string name="stopTimer">Остановить</string>
+
+    <string name="favourites">Избранное</string>
+    <string name="clearFavourites">Очистить список</string>
+    <string name="favouritesInfo">У Вас пока ещё нет\nизбранных настроек</string>
+
+    <string name="favouritesHint">Сохранить текущее\nсостояние в избранное</string>
+    <string name="favouritesInputHint">Название</string>
+    <string name="save">СОХРАНИТЬ</string>
+
+    <string name="mode">Режим</string>
+    <string name="sunsetImage">Рассвет</string>
+    <string name="sunset">Рассвет</string>
+
+    <string name="temperature">Температура:</string>
+    <string name="kelvinsScale">Шкала Кельвина</string>
+    <string name="pointer">Указатель</string>
+    <string name="brightness">Яркость</string>
+    <string name="timerText">Осталось <font color="#FFC859">%1$d</font> мин.</string>
+    <string name="menuHome">Главная</string>
+    <string name="menuModes">Режимы</string>
+    <string name="menuTemperature">Кельвины</string>
+    <string name="menuColor">Цвет</string>
+    <string name="menuThread">Поток</string>
+    <string name="menuTimer">Таймер</string>
+    <string name="menuShedules">Расписания</string>
+    <string name="menuScenarious">Сценарии</string>
+    <string name="menuFavourites">Избранное</string>
+    <string name="color">Цвет:</string>
+    <string name="preview">Предпросмотр</string>
+</resources>
