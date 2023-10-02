@@ -9,7 +9,7 @@
     <color name="green">#FF06FFB6</color>
     <color name="blue">#FF0693FF</color>
     <color name="statusBar">#FF1E232C</color>
-    <color name="backgroundMenu">#951E232C</color>
+    <color name="backgroundMenu">#F51E232C</color>
     <color name="cardItem">#601E232C</color>
     <color name="cardItemSelected">#60355CA3</color>
 </resources>

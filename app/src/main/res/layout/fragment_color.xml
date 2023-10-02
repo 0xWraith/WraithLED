@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.color.ColorFragment">
+    tools:context=".ui.ColorFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -21,7 +21,7 @@
             android:textColor="@color/white"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.25"
+            app:layout_constraintHorizontal_bias="0.347"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,14 +31,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="84dp"
             android:fontFamily="@font/arial_bold"
+            android:text="@string/preview"
             android:textAlignment="textStart"
             android:textAllCaps="true"
             android:textColor="#FFC859"
             android:textIsSelectable="false"
-            android:text="@string/preview"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.07"
+            app:layout_constraintHorizontal_bias="0.089"
             app:layout_constraintStart_toEndOf="@+id/textView3"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -85,17 +85,15 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/relativeLayout4"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_marginTop="36dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="-25dp"
             app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
 
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/textViewR"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_alignParentStart="true"
@@ -108,23 +106,23 @@
                 android:layout_marginBottom="0dp"
                 android:background="@drawable/brightness_shape" />
 
-            <ImageView
-                android:id="@+id/imageView"
+            <TextView
+                android:id="@+id/textViewChannelR"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:layout_alignBottom="@+id/textView4"
+                android:layout_alignBottom="@+id/textViewR"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="29dp"
-                android:layout_marginTop="13dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginBottom="17dp"
-                android:src="@drawable/brightness"
-                android:contentDescription="@string/brightness" />
+                android:textAlignment="center"
+                android:textColor="@color/red" />
 
             <SeekBar
-                android:id="@+id/brightnessBar"
+                android:id="@+id/channelRBar"
 
-                style="@style/BrightnessSeekBar"
+                style="@style/ChanelRSeekBar"
                 android:layout_width="303dp"
                 android:layout_height="61dp"
                 android:layout_alignParentTop="true"
@@ -133,12 +131,117 @@
                 android:layout_marginStart="4dp"
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="36dp"
-                android:layout_toEndOf="@+id/imageView"
+                android:layout_toEndOf="@+id/textViewChannelR"
                 android:max="255" />
 
 
         </RelativeLayout>
 
+        <RelativeLayout
+            android:id="@+id/relativeLayout5"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout4">
+
+
+            <TextView
+                android:id="@+id/textViewG"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
+                android:background="@drawable/brightness_shape" />
+
+            <TextView
+                android:id="@+id/textViewChannelG"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignBottom="@+id/textViewG"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="29dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="17dp"
+                android:textAlignment="center"
+                android:textColor="@color/blue" />
+
+            <SeekBar
+                android:id="@+id/channelGBar"
+
+                style="@style/ChanelGSeekBar"
+                android:layout_width="303dp"
+                android:layout_height="61dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="36dp"
+                android:layout_toEndOf="@+id/textViewChannelG"
+                android:max="255" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout5">
+
+
+            <TextView
+                android:id="@+id/textViewB"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
+                android:background="@drawable/brightness_shape" />
+
+            <TextView
+                android:id="@+id/textViewChannelB"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignBottom="@+id/textViewB"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="29dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="17dp"
+                android:textAlignment="center"
+                android:textColor="@color/blue" />
+
+            <SeekBar
+                android:id="@+id/channelBBar"
+
+                style="@style/ChanelBSeekBar"
+                android:layout_width="303dp"
+                android:layout_height="61dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="36dp"
+                android:layout_toEndOf="@+id/textViewChannelB"
+                android:max="255" />
+
+
+        </RelativeLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

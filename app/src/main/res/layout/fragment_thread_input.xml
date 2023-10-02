@@ -1,0 +1,33 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/cardItem">
+
+    <EditText
+        android:id="@+id/hex_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="HEX"
+        android:inputType="text"
+        android:maxLength="6"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:autofillHints="" />
+
+    <Button
+        android:id="@+id/saveColor"
+        style="@style/Button"
+        android:layout_width="322dp"
+        android:layout_height="64dp"
+        android:textColorLink="#FCE4EC"
+        android:text="@string/save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timePicker"
+        app:layout_constraintVertical_bias="0.301"/>
+
+</LinearLayout>

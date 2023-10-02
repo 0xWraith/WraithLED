@@ -31,6 +31,25 @@
     <string name="menuShedules">Shedules</string>
     <string name="menuScenarious">Scenarious</string>
     <string name="menuFavourites">Favourites</string>
-    <string name="color">Color</string>
-    <string name="preview">preview</string>
+    <string name="color">Color:</string>
+    <string name="preview">Current</string>
+    <string name="noConnectionUpdate">Update</string>
+    <string name="noConnectionText">Doesn\'t connected to RGB strip</string>
+    <string name="saveFavErr">Unable to save state while strip is off</string>
+    <string name="saveFavErrLen">Minimal name length - 1 symbol</string>
+    <string name="modeOn">Mode: </string>
+    <string name="home">Home</string>
+    <string name="homeInfo">WraithLED state</string>
+    <string name="mood1">Dawn</string>
+    <string name="mood2">Afterglow</string>
+    <string name="mood3">Night light</string>
+    <string name="mood4">Movie</string>
+    <string name="mood5">Fireplace</string>
+    <string name="mood6">Horny</string>
+    <string name="mood7">Snowy</string>
+    <string name="mood8">Thunder</string>
+    <string name="error">Error</string>
+    <string name="timerCanceled">Timer was stopped</string>
+    <string name="timerCreated">Timer was setted</string>
+    <string name="threadInfo">Set 4 colors and they will smoothly change</string>
 </resources>

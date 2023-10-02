@@ -6,38 +6,38 @@
         <item
             android:id="@+id/nav_home"
             android:title="@string/menuHome"
-            android:icon="@drawable/mode_icon" />
+            android:icon="@drawable/home_icon" />
         <item
             android:id="@+id/nav_modes"
             android:title="@string/menuModes"
-            android:icon="@drawable/mode_icon" />
+            android:icon="@drawable/clapperboard" />
         <item
             android:id="@+id/nav_temperature"
             android:title="@string/menuTemperature"
-            android:icon="@drawable/mode_icon" />
+            android:icon="@drawable/kelvins_icon" />
         <item
             android:id="@+id/nav_color"
             android:title="@string/menuColor"
-            android:icon="@drawable/mode_icon" />
+            android:icon="@drawable/color_icon" />
         <item
             android:id="@+id/nav_thread"
             android:title="@string/menuThread"
-            android:icon="@drawable/mode_icon" />
+            android:icon="@drawable/thread_icon" />
         <item
             android:id="@+id/nav_timer"
             android:title="@string/menuTimer"
-            android:icon="@drawable/mode_icon" />
+            android:icon="@drawable/timer_icon" />
         <item
             android:id="@+id/nav_shedules"
             android:title="@string/menuShedules"
-            android:icon="@drawable/mode_icon" />
+            android:icon="@drawable/shedules_icon" />
         <item
             android:id="@+id/nav_scenarious"
             android:title="@string/menuScenarious"
-            android:icon="@drawable/mode_icon" />
+            android:icon="@drawable/scenarios_icon" />
         <item
             android:id="@+id/nav_favourites"
             android:title="@string/menuFavourites"
-            android:icon="@drawable/mode_icon" />
+            android:icon="@drawable/favourites_icon" />
     </group>
 </menu>

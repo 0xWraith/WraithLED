@@ -11,6 +11,8 @@
     <string name="timerInfo">Подсветка будет автоматически включена/отключена когда таймер завершится</string>
     <string name="startTimer">Старт</string>
     <string name="stopTimer">Остановить</string>
+    <string name="timerCanceled">Таймер был остановлен</string>
+    <string name="timerCreated">Таймер был установлен</string>
 
     <string name="favourites">Избранное</string>
     <string name="clearFavourites">Очистить список</string>
@@ -23,7 +25,6 @@
     <string name="mode">Режим</string>
     <string name="sunsetImage">Рассвет</string>
     <string name="sunset">Рассвет</string>
-
     <string name="temperature">Температура:</string>
     <string name="kelvinsScale">Шкала Кельвина</string>
     <string name="pointer">Указатель</string>
@@ -39,5 +40,26 @@
     <string name="menuScenarious">Сценарии</string>
     <string name="menuFavourites">Избранное</string>
     <string name="color">Цвет:</string>
-    <string name="preview">Предпросмотр</string>
+    <string name="preview">Текущий</string>
+    <string name="noConnectionText">Нет подключения к RGB ленте</string>
+    <string name="noConnectionUpdate">Обновить</string>
+    <string name="saveFavErr">Невозможно сохранить текущее состояние пока лента выключена</string>
+    <string name="saveFavErrLen">Минимальная длина названия - 1 символ</string>
+    <string name="modeOn">Установлен режим: </string>
+
+    <string name="home">Главная</string>
+    <string name="homeInfo">Состояние подсветки</string>
+
+    <string name="mood1">Рассвет</string>
+    <string name="mood2">Закат</string>
+    <string name="mood3">Ночник</string>
+    <string name="mood4">Кино</string>
+    <string name="mood5">Камин</string>
+    <string name="mood6">Horny</string>
+    <string name="mood7">Снег</string>
+    <string name="mood8">Гроза</string>
+
+    <string name="error">Ошибка</string>
+    <string name="threadInfo">Установите 4 цвета и они будут плавно менятся между собою</string>
+
 </resources>

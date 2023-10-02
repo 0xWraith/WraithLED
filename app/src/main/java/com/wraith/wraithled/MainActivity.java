@@ -12,7 +12,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -22,91 +21,64 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+
 import com.google.android.material.navigation.NavigationView;
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-import com.wraith.wraithled.ui.cfavourite.CreateFavouriteFragment;
-import com.wraith.wraithled.ui.color.ColorFragment;
-import com.wraith.wraithled.ui.favourites.FavouritesFragment;
-import com.wraith.wraithled.ui.home.HomeFragment;
-import com.wraith.wraithled.ui.mode.ModeFragment;
-import com.wraith.wraithled.ui.scenarious.ScenariousFragment;
-import com.wraith.wraithled.ui.shedules.ShedulesFragment;
-import com.wraith.wraithled.ui.temperature.TemperatureFragment;
-import com.wraith.wraithled.ui.thread.ThreadFragment;
-import com.wraith.wraithled.ui.timer.TimerFragment;
+import com.wraith.wraithled.classes.Favourites;
+import com.wraith.wraithled.classes.MoodesHandler;
+import com.wraith.wraithled.classes.RGBStrip;
+import com.wraith.wraithled.interfaces.SyncDataInterface;
+import com.wraith.wraithled.interfaces.UIInterface_Fragment;
+import com.wraith.wraithled.ui.CreateFavouriteFragment;
+import com.wraith.wraithled.ui.ColorFragment;
+import com.wraith.wraithled.ui.FavouritesFragment;
+import com.wraith.wraithled.ui.HomeFragment;
+import com.wraith.wraithled.ui.ModeFragment;
+import com.wraith.wraithled.ui.ScenariousFragment;
+import com.wraith.wraithled.ui.ShedulesFragment;
+import com.wraith.wraithled.ui.TemperatureFragment;
+import com.wraith.wraithled.ui.ThreadFragment;
+import com.wraith.wraithled.ui.TimerFragment;
 
-import java.io.FileInputStream;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.Arrays;
-
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, SyncDataInterface
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, SyncDataInterface, UIInterface_Fragment
 {
-
-    DrawerLayout drawerLayout;
-    NavigationView navigationView;
-    Toolbar toolBar;
-
-    ImageView stripPower;
-
     private RGBStrip strip;
-    private ArrayList<SavedFavourites> favourites;
+    private Favourites favourites;
+    private MoodesHandler moodesHandler;
 
-    public final static String FAVOURITES_FILE_NAME = "favourites.json";
+    /*UI*/
+    private Toolbar toolBar;
+    private ImageView stripPower;
+    private DrawerLayout drawerLayout;
+    private NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+        strip = new RGBStrip();
+        favourites = new Favourites();
+        moodesHandler = new MoodesHandler();
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        strip = new RGBStrip();
-
-        drawerLayout = findViewById(R.id.drawerLayout);
-        navigationView = findViewById(R.id.nav_view);
-        toolBar = findViewById(R.id.toolbar);
-
-        navigationView.bringToFront();
-
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolBar, R.string.nav_drawer_open, R.string.nav_drawer_close);
-        drawerLayout.addDrawerListener(toggle);
-        navigationView.setCheckedItem(R.id.nav_home);
-        navigationView.setNavigationItemSelectedListener(this);
-
-        stripPower = (ImageView) findViewById(R.id.stripStateIcon);
-
-        changePowerIcon(strip.getPowerState());
-        getSavedFavouriteList();
-    }
-
-    @Override
-    public void onBackPressed()
-    {
-        if (drawerLayout.isDrawerOpen(GravityCompat.START))
-        {
-            drawerLayout.closeDrawer(GravityCompat.START);
-            toolBar.setVisibility(View.VISIBLE);
-        }
-        else
-            super.onBackPressed();
+        loadUIVariables(null);
+        configureMenu();
+        favourites.getSavedFavouriteList(getApplicationContext());
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item)
     {
 
+        Fragment fragment;
         int menuSelectedID = item.getItemId();
-
-        Fragment fragment = null;
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-
+        FragmentTransaction fragmentTransaction;
 
         if(menuSelectedID == R.id.nav_home)
-            fragment = new HomeFragment();
+            fragment = new HomeFragment().newInstance(strip);
 
         else if(menuSelectedID == R.id.nav_modes)
-            fragment = new ModeFragment().newInstance(strip);
+            fragment = new ModeFragment().newInstance(strip, moodesHandler);
 
         else if(menuSelectedID == R.id.nav_temperature)
             fragment = new TemperatureFragment().newInstance(strip);
@@ -115,7 +87,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             fragment = new ColorFragment().newInstance(strip);
 
         else if(menuSelectedID == R.id.nav_thread)
-            fragment = new ThreadFragment().newInstance("muki", "muki");
+            fragment = new ThreadFragment().newInstance(strip);
 
         else if(menuSelectedID == R.id.nav_timer)
             fragment = new TimerFragment().newInstance(strip);
@@ -127,19 +99,49 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             fragment = new ScenariousFragment().newInstance("muki", "muki");
 
         else if(menuSelectedID == R.id.nav_favourites)
-            fragment = new FavouritesFragment().newInstance(strip, favourites);
+            fragment = new FavouritesFragment().newInstance(strip, favourites, moodesHandler);
 
         else
-            fragment = new HomeFragment();
+        {
+            closeMenu();
+            return false;
+        }
 
+        closeMenu();
         navigationView.setCheckedItem(menuSelectedID);
-
+        fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.nav_host_fragment, fragment).commit();
+        return false;
+    }
 
+    @Override
+    public void onBackPressed()
+    {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START))
+            closeMenu();
+        else
+            super.onBackPressed();
+    }
+    public void loadUIVariables(View view)
+    {
+        toolBar = findViewById(R.id.toolbar);
+        navigationView = findViewById(R.id.nav_view);
+        drawerLayout = findViewById(R.id.drawerLayout);
+        stripPower = findViewById(R.id.stripStateIcon);
+    }
+    private void configureMenu()
+    {
+        navigationView.bringToFront();
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolBar, R.string.nav_drawer_open, R.string.nav_drawer_close);
+        drawerLayout.addDrawerListener(toggle);
+        navigationView.setCheckedItem(R.id.nav_home);
+        navigationView.setNavigationItemSelectedListener(this);
+    }
+
+    private void closeMenu()
+    {
         drawerLayout.closeDrawers();
         toolBar.setVisibility(View.VISIBLE);
-
-        return false;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.Q)
@@ -149,55 +151,38 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
-            vibrator.vibrate(VibrationEffect.createOneShot(50, VibrationEffect.EFFECT_TICK));
+            vibrator.vibrate(VibrationEffect.createOneShot(50, VibrationEffect.EFFECT_HEAVY_CLICK));
         else
-            vibrator.vibrate(500);
+            vibrator.vibrate(50);
 
-        strip.setPower(!strip.getPowerState());
+        strip.setPower((strip.getPowerState() == 1 ? 0 : 1));
         changePowerIcon(strip.getPowerState());
-
         strip.sync();
     }
 
     public void saveSettings(View view)
     {
-        if(!strip.getPowerState())
+        if(strip.getPowerState() == 0)
         {
-            Toast.makeText(this, "Невозможно сохранить текущее состояние пока лента выключена", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.saveFavErr, Toast.LENGTH_SHORT).show();
             return;
         }
 
-        Fragment fragment = new CreateFavouriteFragment().newInstance(strip, favourites);
+        Fragment fragment;
+
+        closeMenu();
+        fragment = new CreateFavouriteFragment().newInstance(strip, favourites);
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-
         fragmentTransaction.replace(R.id.nav_host_fragment, fragment).commit();
-
-        drawerLayout.closeDrawers();
-        toolBar.setVisibility(View.VISIBLE);
     }
-
-    private void getSavedFavouriteList()
+    public void syncStripMainClass(RGBStrip newStripObject)
     {
-        FileInputStream fileInputStream;
-
-        try
-        {
-            fileInputStream = openFileInput(MainActivity.FAVOURITES_FILE_NAME);
-            byte byteArray[] = new byte[fileInputStream.available()];
-
-            fileInputStream.read(byteArray);
-            String text = new String (byteArray);
-
-            Gson gson = new Gson();
-
-            SavedFavourites[] savedFavourites = gson.fromJson(text, SavedFavourites[].class);
-            favourites = new ArrayList<SavedFavourites>(Arrays.asList(savedFavourites));
-
-            fileInputStream.close();
-        }
-        catch (Exception ex) { favourites = new ArrayList<SavedFavourites>(); }
+        strip = newStripObject;
     }
-    public void syncStripMainClass(RGBStrip newStripObject) { strip = newStripObject; }
-    public void syncFavourites(ArrayList<SavedFavourites> newFavouritesList) { favourites = newFavouritesList; }
-    public void changePowerIcon(boolean power) { stripPower.setImageResource(!power ? R.drawable.state_off : R.drawable.state_on); }
+    public void syncFavourites(Favourites newFavourites)
+    {
+        favourites = newFavourites;
+    }
+    public void changePowerIcon(int power) { stripPower.setImageResource(power == 0 ? R.drawable.state_off : R.drawable.state_on); }
+    public void toolBarState(int state) { toolBar.setVisibility(state); }
 }

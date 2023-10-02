@@ -7,52 +7,52 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.wraith.wraithled.ui.home.HomeFragment"
+        android:name="com.wraith.wraithled.ui.HomeFragment"
         android:label="Главная"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_modes"
-        android:name="com.wraith.wraithled.ui.mode.ModeFragment"
+        android:name="com.wraith.wraithled.ui.ModeFragment"
         android:label="Режимы"
         tools:layout="@layout/fragment_mode" />
 
     <fragment
         android:id="@+id/nav_temperature"
-        android:name="com.wraith.wraithled.ui.temperature.TemperatureFragment"
+        android:name="com.wraith.wraithled.ui.TemperatureFragment"
         android:label="fragment_temperature"
         tools:layout="@layout/fragment_temperature" />
 
     <fragment
         android:id="@+id/nav_color"
-        android:name="com.wraith.wraithled.ui.color.ColorFragment"
+        android:name="com.wraith.wraithled.ui.ColorFragment"
         android:label="Цвет"
         tools:layout="@layout/fragment_color" />
 
     <fragment
         android:id="@+id/nav_favourites"
-        android:name="com.wraith.wraithled.ui.favourites.FavouritesFragment"
+        android:name="com.wraith.wraithled.ui.FavouritesFragment"
         android:label="Избранные"
         tools:layout="@layout/fragment_favourites" />
     <fragment
         android:id="@+id/nav_scenarious"
-        android:name="com.wraith.wraithled.ui.scenarious.ScenariousFragment"
+        android:name="com.wraith.wraithled.ui.ScenariousFragment"
         android:label="fragment_scenarious"
         tools:layout="@layout/fragment_scenarious" />
     <fragment
         android:id="@+id/nav_shedules"
-        android:name="com.wraith.wraithled.ui.shedules.ShedulesFragment"
+        android:name="com.wraith.wraithled.ui.ShedulesFragment"
         android:label="fragment_shedules"
         tools:layout="@layout/fragment_shedules" />
 
     <fragment
         android:id="@+id/nav_thread"
-        android:name="com.wraith.wraithled.ui.thread.ThreadFragment"
+        android:name="com.wraith.wraithled.ui.ThreadFragment"
         android:label="fragment_thread"
         tools:layout="@layout/fragment_thread" />
     <fragment
         android:id="@+id/nav_timer"
-        android:name="com.wraith.wraithled.ui.timer.TimerFragment"
+        android:name="com.wraith.wraithled.ui.TimerFragment"
         android:label="fragment_timer"
         tools:layout="@layout/fragment_timer" />
 
